@@ -6,7 +6,8 @@
     <title>Wreal X | Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Added Orbitron Font Here -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root{
@@ -195,6 +196,15 @@
             font-size:1.08rem;
             letter-spacing:0.04em;
             line-height:1.8;
+        }
+        /* Added specific class for the new quote */
+        .hero-quote {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            max-width: 650px;
+            margin-top: 1rem;
         }
         .cta-btn{
             display:inline-block;
@@ -497,6 +507,7 @@
         @media (max-width:480px){
             .hero .head { font-size:3.2rem; }
             .hero .tagline { font-size:1.0rem; letter-spacing:0.12em; }
+            .hero-quote { font-size: 0.85rem; } /* Slightly smaller on phones */
             .cta-btn, .stream-btn, .stream-cta a { letter-spacing:0.1em; padding-left:2rem; padding-right:2rem; }
         }
     </style>
@@ -528,7 +539,8 @@
     <section class="hero">
         <h1 class="head">WREAL X</h1>
         <p class="tagline">Cursed</p>
-        <p class="sub">Dark aesthetics, alien energy, and emotional truth — welcome to my world.</p>
+        <!-- Replaced old tagline with new quote using Orbitron font -->
+        <p class="sub hero-quote">Athena Cursed Her For Living, Life Cursed Me For Existing</p>
         <a href="music.html" class="cta-btn">Watch Now</a>
     </section>
 
@@ -575,8 +587,8 @@
                 <p class="artist-name">Wreal X</p>
                 <a href="https://altlink.co/hurry-up" target="_blank" class="small-stream-btn">Stream</a>
             </div>
-        </div>
-    </section>
+    </div>
+            </section>
 
     <div class="stream-cta">
         <a href="https://ffm.to/nitro-veil" target="_blank">Stream Wreal X</a>
@@ -590,10 +602,6 @@
 
     <div class="social-bar-bottom">
         <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i><span class="label">Instagram</span></a>
-        <a href="https://instagram.com/wreal.x" target="_blank" rel="noopener">
-            <i class="fab fa-instagram"></i>
-            <span class="label">Instagram</span>
-        </a>
         <a href="https://youtube.com/@wrealx" target="_blank" rel="noopener">
             <i class="fab fa-youtube"></i>
             <span class="label">YouTube</span>
@@ -650,3 +658,4 @@
     </script>
 </body>
 </html>
+            
