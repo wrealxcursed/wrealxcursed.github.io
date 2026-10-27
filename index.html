@@ -6,8 +6,7 @@
     <title>Wreal X | Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Added Orbitron Font Here -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root{
@@ -25,7 +24,7 @@
         * { box-sizing:border-box; margin:0; padding:0; }
         html, body { background:var(--bg); color:var(--text); font-family:"Inter", sans-serif; min-height:100vh; overflow-x:hidden; }
         a, button, input, textarea { font-family:"Inter", sans-serif; }
-        h1,h2,h3,h4,.logo,.brand-text,.nav-toggle,.page-sub,.hero .head,.video-tag,.video-title,.release-title,.release-item h3,.contact-info h2,.contact-form h3 { font-family:"Inter", sans-serif; font-weight:800; }
+        h1,h2,h3,h4,.logo,.brand-text,.nav-toggle,.page-sub,.hero .head,.video-tag,.video-title,.release-title,.release-item h3,.contact-info h2,.contact-form h3 { font-family:"Inter", sans-serif; }
 
         body { position:relative; }
         nav {
@@ -197,7 +196,6 @@
             letter-spacing:0.04em;
             line-height:1.8;
         }
-        /* Added specific class for the new quote */
         .hero-quote {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.95rem;
@@ -206,24 +204,70 @@
             max-width: 650px;
             margin-top: 1rem;
         }
-        .cta-btn{
-            display:inline-block;
-            margin-top:2.2rem;
-            padding:1rem 3.2rem;
+        .hero-buttons {
+            margin-top: 2.2rem;
+            display:flex;
+            gap:1rem;
+            justify-content:center;
+            align-items:stretch;
+            flex-wrap:wrap;
+        }
+        .hero-button,
+        .hero-button:visited {
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.7rem;
+            min-width:190px;
+            padding:1rem 1.8rem;
             border-radius:50px;
+            text-decoration:none;
+            transition:all 0.3s ease;
+            border:1px solid rgba(57,255,20,0.35);
+        }
+        .hero-button.primary {
             background:var(--green);
             color:#0A0A0A;
-            text-decoration:none;
+            box-shadow:0 0 60px rgba(57,255,20,0.22);
             font-weight:800;
             text-transform:uppercase;
-            letter-spacing:0.14em;
-            box-shadow:0 0 60px rgba(57,255,20,0.22);
-            transition:all 0.3s ease;
+            letter-spacing:0.12em;
         }
-        .cta-btn:hover{
+        .hero-button.primary:hover {
             background:var(--green-2);
             transform:translateY(-2px) scale(1.03);
             box-shadow:0 0 90px rgba(57,255,20,0.35);
+        }
+        .hero-button.secondary {
+            background:linear-gradient(180deg, rgba(18,18,18,0.95), rgba(10,10,10,0.98));
+            color:#fff;
+            box-shadow:0 0 28px rgba(0,0,0,0.35);
+            border:1px solid rgba(57,255,20,0.25);
+            flex-direction:column;
+            gap:0.2rem;
+            min-height:68px;
+            padding:0.7rem 1.5rem;
+        }
+        .hero-button.secondary:hover {
+            background:linear-gradient(180deg, rgba(28,28,28,0.98), rgba(12,12,12,1));
+            border-color:rgba(57,255,20,0.7);
+            box-shadow:0 0 40px rgba(57,255,20,0.15);
+            transform:translateY(-2px) scale(1.02);
+        }
+        .hero-button i {
+            font-size:1.05rem;
+        }
+        .hero-button.secondary i {
+            font-size:1rem;
+        }
+        .hero-button span {
+            display:inline-block;
+        }
+        .hero-button.secondary .event-label {
+            font-size:0.65rem;
+            letter-spacing:0.08em;
+            text-transform:uppercase;
+            font-weight:700;
         }
 
         .content-section{
@@ -231,11 +275,17 @@
             margin:0 auto;
             padding:4rem 5%;
         }
-        .content-section h2{
+        .content-section h2,
+        .release-section h2,
+        .recent-releases h2,
+        .email-section h2 {
             text-align:center;
             font-size:clamp(2rem, 5vw, 3rem);
             margin-bottom:2rem;
             letter-spacing:0.05em;
+            font-family:'Orbitron', sans-serif;
+            text-transform:uppercase;
+            font-weight:700;
         }
 
         .video-grid{
@@ -278,12 +328,6 @@
             margin:0 auto;
             text-align:center;
             padding:4rem 5% 2rem;
-        }
-        .release-section h2{
-            text-align:center;
-            font-size:clamp(2rem, 5vw, 3rem);
-            margin-bottom:2rem;
-            letter-spacing:0.05em;
         }
         .release-cover{
             width:100%;
@@ -334,12 +378,6 @@
             max-width:1300px;
             margin:0 auto;
             padding:2rem 5% 4rem;
-        }
-        .recent-releases h2{
-            text-align:center;
-            font-size:clamp(2rem, 5vw, 3rem);
-            margin-bottom:2rem;
-            letter-spacing:0.05em;
         }
         .release-grid{
             display:grid;
@@ -427,10 +465,7 @@
             padding:3rem 5% 1rem;
         }
         .email-section h2{
-            text-align:center;
-            font-size:clamp(2rem, 5vw, 3rem);
             margin-bottom:0.5rem;
-            letter-spacing:0.05em;
         }
         .email-sub{
             text-align:center;
@@ -487,6 +522,71 @@
             opacity:0.7;
         }
 
+        .silktide-consent,
+        .silktide-cookie-consent,
+        .silktide-consent-manager {
+            --fontFamily: "Inter", sans-serif;
+            --primaryColor: #39FF14;
+            --backgroundColor: #0A0A0A;
+            --textColor: #FFFFFF;
+            --iconBackgroundColor: #39FF14;
+        }
+
+        .kit-overlay {
+            position:fixed;
+            inset:0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:1rem;
+            background:transparent;
+            opacity:0;
+            visibility:hidden;
+            pointer-events:none;
+            z-index:9999;
+            transition:opacity 0.35s ease, visibility 0.35s ease;
+        }
+        .kit-overlay.active {
+            background:rgba(0,0,0,0.7);
+            backdrop-filter:blur(5px);
+            -webkit-backdrop-filter:blur(5px);
+            opacity:1;
+            visibility:visible;
+            pointer-events:auto;
+        }
+        .kit-popup {
+            position:relative;
+            width:min(520px, calc(100vw - 2rem));
+            background:rgba(10,10,10,0.95);
+            border:1px solid rgba(57,255,20,0.35);
+            border-radius:24px;
+            box-shadow:0 0 60px rgba(0,0,0,0.5);
+            padding:2.25rem 1.15rem 1rem;
+        }
+        .kit-close {
+            position:absolute;
+            top:0.9rem;
+            right:0.9rem;
+            width:34px;
+            height:34px;
+            border:none;
+            border-radius:50%;
+            background:rgba(255,255,255,0.05);
+            color:#fff;
+            font-size:1.35rem;
+            line-height:1;
+            cursor:pointer;
+            transition:all 0.2s ease;
+        }
+        .kit-close:hover {
+            background:rgba(57,255,20,0.14);
+            color:var(--green);
+        }
+        .kit-form-slot {
+            position:relative;
+            z-index:1;
+        }
+
         footer{
             text-align:center;
             color:rgba(255,255,255,0.45);
@@ -507,7 +607,9 @@
         @media (max-width:480px){
             .hero .head { font-size:3.2rem; }
             .hero .tagline { font-size:1.0rem; letter-spacing:0.12em; }
-            .hero-quote { font-size: 0.85rem; } /* Slightly smaller on phones */
+            .hero-quote { font-size: 0.85rem; }
+            .hero-buttons { flex-direction:column; width:100%; }
+            .hero-button { width:100%; }
             .cta-btn, .stream-btn, .stream-cta a { letter-spacing:0.1em; padding-left:2rem; padding-right:2rem; }
         }
     </style>
@@ -539,9 +641,18 @@
     <section class="hero">
         <h1 class="head">WREAL X</h1>
         <p class="tagline">Cursed</p>
-        <!-- Replaced old tagline with new quote using Orbitron font and quotation marks -->
         <p class="sub hero-quote">“Athena Cursed Her For Living, Life Cursed Me For Existing”</p>
-        <a href="music.html" class="cta-btn">Watch Now</a>
+
+        <div class="hero-buttons" aria-label="Artist links">
+            <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" class="hero-button primary" target="_blank" rel="noopener">
+                <i class="fab fa-spotify"></i>
+                <span>Spotify</span>
+            </a>
+            <a href="https://www.bandsintown.com/a/15659185" class="hero-button secondary" target="_blank" rel="noopener">
+                <i class="fas fa-microphone-alt"></i>
+                <span class="event-label">Concerts / Events</span>
+            </a>
+        </div>
     </section>
 
     <section class="content-section">
@@ -586,9 +697,8 @@
                 <h3>Hurry Up</h3>
                 <p class="artist-name">Wreal X</p>
                 <a href="https://altlink.co/hurry-up" target="_blank" class="small-stream-btn">Stream</a>
-                        </div>
-    </div>
-        </div> <!-- This closes the release-grid -->
+            </div>
+        </div>
     </section>
 
     <div class="stream-cta">
@@ -607,7 +717,7 @@
             <i class="fab fa-youtube"></i>
             <span class="label">YouTube</span>
         </a>
-        <a href="https://open.spotify.com/artist/your-artist-id" target="_blank" rel="noopener">
+        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener">
             <i class="fab fa-spotify"></i>
             <span class="label">Spotify</span>
         </a>
@@ -626,6 +736,15 @@
         <br />
         <a href="mailto:contact@wrealx.com">contact@wrealx.com</a>
     </footer>
+
+    <div id="kitOverlay" class="kit-overlay" aria-hidden="true">
+        <div class="kit-popup" role="dialog" aria-modal="true" aria-label="Email signup form">
+            <button type="button" class="kit-close" aria-label="Close signup popup">×</button>
+            <div class="kit-form-slot">
+                <script async data-uid="7ec1dec6c2" src="https://wreal-x.kit.com/7ec1dec6c2/index.js"></script>
+            </div>
+        </div>
+    </div>
 
     <script>
         const navToggle = document.querySelector(".nav-toggle");
@@ -656,7 +775,55 @@
         if (yearEl) {
             yearEl.textContent = new Date().getFullYear();
         }
+
+        const kitOverlay = document.getElementById("kitOverlay");
+        const kitClose = document.querySelector(".kit-close");
+        const dismissKitOverlay = () => {
+            if (!kitOverlay) return;
+            kitOverlay.classList.remove("active");
+            kitOverlay.setAttribute("aria-hidden", "true");
+        };
+
+        if (kitOverlay) {
+            setTimeout(() => {
+                kitOverlay.classList.add("active");
+                kitOverlay.setAttribute("aria-hidden", "false");
+            }, 1000);
+        }
+
+        if (kitClose) {
+            kitClose.addEventListener("click", dismissKitOverlay);\n        }
+
+        document.addEventListener("click", (event) => {
+            const submitButton = event.target.closest("button[type='submit'], input[type='submit']");
+            if (submitButton && submitButton.closest(".kit-form, .kit-form-slot")) {
+                setTimeout(dismissKitOverlay, 250);
+            }
+        });
     </script>
+
+    <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function(){
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+    </script>
+
+    <script>
+        window.silktide = window.silktide || {};
+        window.silktide.config = window.silktide.config || {};
+        window.silktide.config.theme = 'dark';
+        window.silktide.config.fontFamily = 'Inter, sans-serif';
+        window.silktide.config.primaryColor = '#39FF14';
+        window.silktide.config.backgroundColor = '#0A0A0A';
+        window.silktide.config.textColor = '#FFFFFF';
+        window.silktide.config.iconBackgroundColor = '#39FF14';
+    </script>
+    <script src="https://cdn.silktide.com/cookieconsent/consentmanager.js" async></script>
 </body>
 </html>
-            
