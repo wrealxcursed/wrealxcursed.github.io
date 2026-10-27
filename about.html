@@ -6,7 +6,7 @@
     <title>About | Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=UnifrakturCook:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root{
@@ -14,6 +14,12 @@
             --text:#E7E7E7;
             --green:#39FF14;
             --green-2:#00FF41;
+        }
+
+        .kit-overlay,
+        .kit-widget,
+        .kit-widget-overlay {
+            z-index: 40 !important;
         }
 
         * { box-sizing:border-box; margin:0; padding:0; }
@@ -233,7 +239,6 @@
             line-height:1.9;
             margin-bottom:1.1rem;
             font-weight:300;
-            font-family:'UnifrakturCook', cursive;
         }
         .bio strong{ color:var(--green); font-weight:700; }
 
@@ -362,11 +367,11 @@
             <p class="real-name">born <span>Angel Jambu Roy</span> · July 20, 2007 · Yei, South Sudan</p>
 
             <p class="bio"><strong>Wreal X</strong> is a South Sudanese singer, rapper, and songwriter whose sound blends dark emotion, Afrobeats, and emo-trap energy.</p>
-            <p class="bio">Born to the late <strong>Mr. Taban Roy</strong> and <strong>Mrs. Santuke Koloy Kamba</strong>, he discovered his love for music as a child and began writing lyrics before he could fully understand the weight of the words. The pain, memories, and resilience of his upbringing shaped the raw honesty behind his sound.</p>
+            <p class="bio">Born to the late <strong>Mr. Taban Roy</strong> and <strong>Mrs. Santuke Koloy Kamba</strong>, he discovered his love for music as a child and began writing lyrics before adolescence.</p>
 
             <div class="highlight">“Every verse is a confession — a soul marked by suffering and hope.”</div>
 
-            <p class="bio">His sound carries the intensity of emotional vulnerability, while still echoing the rhythms and warmth of his East African roots. Early releases such as <strong>Monalisa</strong>, <strong>Gang Gang</strong>, and <strong>Nitro Veil</strong> marked the rise of an artist unafraid to turn grief into melody and struggle into movement.</p>
+            <p class="bio">His sound carries the intensity of emotional vulnerability, while still echoing the rhythms and warmth of his East African roots. Early releases such as <strong>Monalisa</strong> and <strong>Malice</strong> helped establish his name as a rising voice in a generation shaped by pain, faith, and reinvention.</p>
 
             <div class="milestones">
                 <div class="milestone">
@@ -442,6 +447,18 @@
                     }
                 });
             }
+        })();
+    </script>
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+            var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
+            s1.async = true;
+            s1.src='https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
 </body>

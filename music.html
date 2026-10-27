@@ -6,7 +6,7 @@
     <title>Music | Wreal X</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root{
@@ -16,6 +16,12 @@
             --muted:#BDBDBD;
             --green:#39FF14;
             --green-2:#00FF41;
+        }
+
+        .kit-overlay,
+        .kit-widget,
+        .kit-widget-overlay {
+            z-index: 40 !important;
         }
 
         * { box-sizing:border-box; margin:0; padding:0; }
@@ -194,15 +200,11 @@
             text-align:center;
             padding:4rem 5% 2rem;
         }
-        .release-section h2,
-        .recent-releases h2{
+        .release-section h2{
             text-align:center;
             font-size:clamp(2rem,5vw,3rem);
             margin-bottom:2rem;
             letter-spacing:0.05em;
-            font-family:'Orbitron', sans-serif;
-            text-transform:uppercase;
-            font-weight:700;
         }
         .release-cover{
             width:100%;
@@ -253,6 +255,12 @@
             max-width:1300px;
             margin:0 auto;
             padding:2rem 5% 4rem;
+        }
+        .recent-releases h2{
+            text-align:center;
+            font-size:clamp(2rem, 5vw, 3rem);
+            margin-bottom:2rem;
+            letter-spacing:0.05em;
         }
         .release-grid{
             display:grid;
@@ -445,6 +453,18 @@
                     }
                 });
             }
+        })();
+    </script>
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+            var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
+            s1.async = true;
+            s1.src='https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
 </body>
