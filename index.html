@@ -619,4 +619,263 @@
         }
         .silktide-consent button,
         .silktide-consent .silktide-button {
-            background: var(--pri
+            background: var(--primaryColor: #39FF14 !important;
+            color: #0A0A0A !important;
+            border-radius: 999px !important;
+            font-weight: 700 !important;
+        }
+
+        @media (max-width:768px){
+            .logo { margin-left:3.7rem; }
+            .video-grid { grid-template-columns:1fr; }
+            .release-grid { grid-template-columns:1fr; }
+            .social-bar-bottom { gap:1.35rem; }
+            .social-bar-bottom a { font-size:1.4rem; }
+            .social-bar-bottom .label { font-size:0.62rem; }
+        }
+        @media (max-width:480px){
+            .hero .head { font-size:3.2rem; }
+            .hero .tagline { font-size:1.0rem; letter-spacing:0.12em; }
+            .hero-quote { font-size: 0.85rem; }
+            .cta-btn, .stream-btn, .stream-cta a { letter-spacing:0.1em; padding-left:2rem; padding-right:2rem; }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cta-btn,
+            .events-btn {
+                width: min(100%, 260px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kit-popup-overlay" id="kitPopup" aria-hidden="true">
+        <div class="kit-popup-card">
+            <button type="button" class="kit-popup-close" aria-label="Close signup form">×</button>
+            <div class="kit-form-wrap">
+                <script async data-uid="7ec1dec6c2" src="https://wreal-x.kit.com/7ec1dec6c2/index.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="index.html" class="logo" aria-label="Wreal X home">
+            <span class="brand-mark">✦</span>
+            <img src="https://files.catbox.moe/adx9wj.jpg" alt="Wreal X logo" class="brand-logo">
+            <span class="brand-text">WREAL X</span>
+        </a>
+    </nav>
+
+    <div class="side-nav" id="sideNav" aria-label="Main navigation menu">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="merch.html">Merch</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-pointer" aria-hidden="true">👆</div>
+
+    <section class="hero">
+        <h1 class="head">WREAL X</h1>
+        <p class="tagline">Cursed</p>
+        <p class="sub hero-quote">“Athena Cursed Her For Living, Life Cursed Me For Existing”</p>
+
+        <div class="hero-actions">
+            <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" class="cta-btn" target="_blank" rel="noopener">
+                <i class="fab fa-spotify"></i>
+                <span>Spotify</span>
+            </a>
+
+            <a href="https://www.bandsintown.com/a/15659185" class="cta-btn events-btn" target="_blank" rel="noopener">
+                <i class="fas fa-microphone-alt"></i>
+                <span>Concerts / Events</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>VIDEOS</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <span class="video-tag">Latest Video</span>
+                <p class="video-title">Nitro Veil</p>
+                <iframe src="https://www.youtube.com/embed/cLhOOhsIs-o" title="Nitro Veil" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <p class="video-title">Gang Gang</p>
+                <iframe src="https://www.youtube.com/embed/lOiZYv0GZGs" title="Gang Gang" allowfullscreen></iframe>
+            </div>
+            <div class="video-card">
+                <p class="video-title">Hurry Up</p>
+                <iframe src="https://www.youtube.com/embed/swCF5DMFquE" title="Hurry Up" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="release-section">
+        <h2>Stream Latest Release</h2>
+        <div class="release-cover" style="background-image:url('https://files.catbox.moe/s11dsf.png');"></div>
+        <h3 class="release-title">Nitro Veil</h3>
+        <p class="release-artist">Wreal X</p>
+        <a href="https://ffm.to/nitro-veil" target="_blank" class="stream-btn">Stream Now</a>
+    </section>
+
+    <section class="recent-releases">
+        <h2>Other Recent Releases</h2>
+        <div class="release-grid">
+            <div class="release-item">
+                <div class="cover-img" style="background-image:url('https://files.catbox.moe/gq73y6.png');"></div>
+                <h3>Gang Gang</h3>
+                <p class="artist-name">Wreal X</p>
+                <a href="https://altlink.co/gang-gang" target="_blank" class="small-stream-btn">Stream</a>
+            </div>
+
+            <div class="release-item">
+                <div class="cover-img" style="background-image:url('https://files.catbox.moe/hasrqj.png');"></div>
+                <h3>Hurry Up</h3>
+                <p class="artist-name">Wreal X</p>
+                <a href="https://altlink.co/hurry-up" target="_blank" class="small-stream-btn">Stream</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stream-cta">
+        <a href="https://ffm.to/nitro-veil" target="_blank">Stream Wreal X</a>
+    </div>
+
+    <section class="email-section">
+        <h2>Stay Connected</h2>
+        <p class="email-sub">Join the movement</p>
+        <div id="beacons-email-form"></div>
+    </section>
+
+    <div class="social-bar-bottom">
+        <a href="https://instagram.com/wreal.x" target="_blank"><i class="fab fa-instagram"></i><span class="label">Instagram</span></a>
+        <a href="https://youtube.com/@wrealx" target="_blank" rel="noopener">
+            <i class="fab fa-youtube"></i>
+            <span class="label">YouTube</span>
+        </a>
+        <a href="https://open.spotify.com/artist/67HoDvLfnWWjCDLEIUbTAl" target="_blank" rel="noopener">
+            <i class="fab fa-spotify"></i>
+            <span class="label">Spotify</span>
+        </a>
+        <a href="https://x.com/wrealx" target="_blank" rel="noopener">
+            <i class="fab fa-x-twitter"></i>
+            <span class="label">X</span>
+        </a>
+        <a href="https://soundcloud.com/wrealx" target="_blank" rel="noopener">
+            <i class="fab fa-soundcloud"></i>
+            <span class="label">SoundCloud</span>
+        </a>
+    </div>
+
+    <footer>
+        © <span id="year"></span> Wreal X
+        <br />
+        <a href="mailto:contact@wrealx.com">contact@wrealx.com</a>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const sideNav = document.getElementById("sideNav");
+
+        if (navToggle && sideNav) {
+            navToggle.addEventListener("click", () => {
+                const isOpen = sideNav.classList.toggle("open");
+                navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+
+            sideNav.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    sideNav.classList.remove("open");
+                    navToggle.setAttribute("aria-expanded", "false");
+                });
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!sideNav.contains(event.target) && !navToggle.contains(event.target)) {
+                    sideNav.classList.remove("open");
+                    navToggle.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
+
+        const yearEl = document.getElementById("year");
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+
+        const kitPopup = document.getElementById("kitPopup");
+        const closeKitPopup = () => {
+            if (!kitPopup) return;
+            kitPopup.classList.remove("active");
+            kitPopup.setAttribute("aria-hidden", "true");
+        };
+
+        const openKitPopup = () => {
+            if (!kitPopup) return;
+            kitPopup.classList.add("active");
+            kitPopup.setAttribute("aria-hidden", "false");
+        };
+
+        if (kitPopup) {
+            const closeButton = kitPopup.querySelector(".kit-popup-close");
+            if (closeButton) {
+                closeButton.addEventListener("click", closeKitPopup);
+            }
+
+            window.addEventListener("load", function () {
+                setTimeout(openKitPopup, 1000);
+            });
+
+            document.addEventListener("click", function (event) {
+                const submitButton = event.target.closest("button[type='submit']");
+                if (submitButton && submitButton.closest(".kit-popup-card")) {
+                    setTimeout(closeKitPopup, 200);
+                }
+            });
+
+            window.addEventListener("message", function (event) {
+                const data = event.data;
+                if (data && (data.type === "kit-success" || data.event === "form-submitted" || data.action === "subscribe")) {
+                    closeKitPopup();
+                }
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+
+    <script>
+        window.silktideConsentManager = window.silktideConsentManager || {};
+        window.silktideConsentManager.config = {
+            cssVars: {
+                '--fontFamily': '"Inter", sans-serif',
+                '--primaryColor': '#39FF14',
+                '--backgroundColor': '#0A0A0A',
+                '--textColor': '#FFFFFF',
+                '--iconBackgroundColor': '#39FF14'
+            }
+        };
+    </script>
+
+</body>
+</html>
