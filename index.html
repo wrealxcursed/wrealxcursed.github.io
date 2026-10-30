@@ -7,6 +7,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+    <style id="silktide-consent-manager-overrides">
+    #stcm-wrapper {
+      --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+      --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+      --primaryColor: #595959;
+      --backgroundColor: #00FF00;
+      --textColor: #FFFFFF;
+      --backdropBackgroundColor: #00000033;
+      --backdropBackgroundBlur: 0px;
+      --iconColor: #595959;
+      --iconBackgroundColor: #00FF00;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+    <script>
+    window.silktideConsentManager.init({
+      backdrop: {
+        show: true
+      },
+      icon: {
+        position: "bottomLeft"
+      },
+      prompt: {
+        position: "bottomRight"
+      },
+      consentTypes: [
+        {
+          id: "essential",
+          label: "Essential",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: true,
+          onAccept: function() {
+            console.log("Add logic for the required Essential consent type here");
+          }
+        },
+        {
+          id: "analytics",
+          label: "Analytics",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          required: false,
+          defaultValue: true,
+          gtag: "analytics_storage"
+        },
+        {
+          id: "marketing",
+          label: "Marketing",
+          description: "<p>These cookies are used by us and our advertising partners to show you relevant ads on this site and elsewhere, and to measure how those campaigns perform.</p>",
+          required: false,
+          gtag: [
+            "ad_storage",
+            "ad_user_data",
+            "ad_personalization"
+          ]
+        }
+      ],
+      text: {
+        prompt: {
+          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+          acceptAllButtonText: "Accept all",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject non-essential",
+          rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          saveButtonText: "Save and close",
+          saveButtonAccessibleLabel: "Save your cookie preferences",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      }
+    });
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root{
@@ -287,7 +365,9 @@
         }
         .content-section h2,
         .release-section h2,
-        .recent-releases h2{
+        .recent-releases h2,
+        .email-section h2,
+        .email-section .email-sub{
             text-align:center;
             font-size:clamp(2rem, 5vw, 3rem);
             margin-bottom:2rem;
@@ -600,31 +680,6 @@
             background: transparent !important;
         }
 
-        .silktide-consent {
-            --fontFamily: "Inter", sans-serif;
-            --primaryColor: #39FF14;
-            --backgroundColor: #0A0A0A;
-            --textColor: #FFFFFF;
-            --iconBackgroundColor: #39FF14;
-        }
-        .silktide-consent,
-        .silktide-consent * {
-            font-family: "Inter", sans-serif !important;
-        }
-        .silktide-consent {
-            background: rgba(10,10,10,0.96) !important;
-            border: 1px solid rgba(57,255,20,0.3) !important;
-            box-shadow: 0 0 30px rgba(57,255,20,0.12) !important;
-            border-radius: 16px !important;
-        }
-        .silktide-consent button,
-        .silktide-consent .silktide-button {
-            background: var(--primaryColor: #39FF14 !important;
-            color: #0A0A0A !important;
-            border-radius: 999px !important;
-            font-weight: 700 !important;
-        }
-
         @media (max-width:768px){
             .logo { margin-left:3.7rem; }
             .video-grid { grid-template-columns:1fr; }
@@ -684,7 +739,7 @@
     <div class="nav-pointer" aria-hidden="true">👆</div>
 
     <section class="hero">
-        <h1 class="head">WREAL X</h1>
+        <h1 class="head">𝕎ℝ𝔼𝔸𝕃 𝕏</h1>
         <p class="tagline">Cursed</p>
         <p class="sub hero-quote">“Athena Cursed Her For Living, Life Cursed Me For Existing”</p>
 
@@ -862,19 +917,6 @@
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);
         })();
-    </script>
-
-    <script>
-        window.silktideConsentManager = window.silktideConsentManager || {};
-        window.silktideConsentManager.config = {
-            cssVars: {
-                '--fontFamily': '"Inter", sans-serif',
-                '--primaryColor': '#39FF14',
-                '--backgroundColor': '#0A0A0A',
-                '--textColor': '#FFFFFF',
-                '--iconBackgroundColor': '#39FF14'
-            }
-        };
     </script>
 
 </body>
