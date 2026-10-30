@@ -365,9 +365,7 @@
         }
         .content-section h2,
         .release-section h2,
-        .recent-releases h2,
-        .email-section h2,
-        .email-section .email-sub{
+        .recent-releases h2{
             text-align:center;
             font-size:clamp(2rem, 5vw, 3rem);
             margin-bottom:2rem;
@@ -623,6 +621,8 @@
         }
         footer a{ color:var(--green); text-decoration:none; }
 
+        body.kit-popup-open { overflow: hidden; }
+
         .kit-popup-overlay {
             position: fixed;
             inset: 0;
@@ -630,9 +630,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -645,7 +646,7 @@
         }
         .kit-popup-card {
             position: relative;
-            width: min(560px, 90vw);
+            width: min(620px, 92vw);
             max-height: 85vh;
             overflow: auto;
             background: rgba(18,18,18,0.96);
@@ -653,6 +654,13 @@
             border-radius: 22px;
             box-shadow: 0 0 70px rgba(0,0,0,0.45), 0 0 25px rgba(57,255,20,0.12);
             padding: 3.2rem 1.4rem 1.2rem;
+            transform: translateY(28px) scale(0.96);
+            opacity: 0;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+        }
+        .kit-popup-overlay.active .kit-popup-card {
+            transform: translateY(0) scale(1);
+            opacity: 1;
         }
         .kit-popup-close {
             position: absolute;
@@ -674,10 +682,11 @@
         .kit-form-wrap iframe {
             width: 100% !important;
             max-width: 100% !important;
-            min-height: 420px;
+            min-height: 500px;
             border: 0 !important;
             border-radius: 14px;
             background: transparent !important;
+            display: block;
         }
 
         @media (max-width:768px){
@@ -687,6 +696,7 @@
             .social-bar-bottom { gap:1.35rem; }
             .social-bar-bottom a { font-size:1.4rem; }
             .social-bar-bottom .label { font-size:0.62rem; }
+            .kit-popup-card { padding: 2.8rem 0.9rem 1rem; }
         }
         @media (max-width:480px){
             .hero .head { font-size:3.2rem; }
@@ -701,6 +711,8 @@
             .events-btn {
                 width: min(100%, 260px);
             }
+            .kit-popup-overlay { padding: 1rem; }
+            .kit-form-wrap iframe { min-height: 420px; }
         }
     </style>
 </head>
@@ -873,12 +885,14 @@
             if (!kitPopup) return;
             kitPopup.classList.remove("active");
             kitPopup.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("kit-popup-open");
         };
 
         const openKitPopup = () => {
             if (!kitPopup) return;
             kitPopup.classList.add("active");
             kitPopup.setAttribute("aria-hidden", "false");
+            document.body.classList.add("kit-popup-open");
         };
 
         if (kitPopup) {
@@ -887,21 +901,20 @@
                 closeButton.addEventListener("click", closeKitPopup);
             }
 
-            window.addEventListener("load", function () {
-                setTimeout(openKitPopup, 1000);
+            kitPopup.addEventListener("click", (event) => {
+                if (event.target === kitPopup) {
+                    closeKitPopup();
+                }
             });
 
-            document.addEventListener("click", function (event) {
-                const submitButton = event.target.closest("button[type='submit']");
-                if (submitButton && submitButton.closest(".kit-popup-card")) {
-                    setTimeout(closeKitPopup, 200);
-                }
+            window.addEventListener("load", function () {
+                setTimeout(openKitPopup, 800);
             });
 
             window.addEventListener("message", function (event) {
                 const data = event.data;
                 if (data && (data.type === "kit-success" || data.event === "form-submitted" || data.action === "subscribe")) {
-                    closeKitPopup();
+                    setTimeout(closeKitPopup, 250);
                 }
             });
         }
