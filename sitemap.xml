@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+       <loc>https://wrealxcursed.github.io/</loc>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://wrealxcursed.github.io/music.html</loc>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://wrealxcursed.github.io/merch.html</loc>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://wrealxcursed.github.io/about.html</loc>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://wrealxcursed.github.io/contact.html</loc>
+       <priority>0.8000</priority>
+  </url>
+</urlset>
